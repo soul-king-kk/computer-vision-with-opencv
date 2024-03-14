@@ -1,0 +1,15 @@
+import cv2
+import numpy as np
+kernel = np.ones((5, 5), np.uint8)
+print("Kernel Matrix:")
+print(kernel)
+path = "C:/Users/kavin/Downloads/download (1).jpg"
+img = cv2.imread(path)
+if img is not None:
+    imgGray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    cv2.imshow("Original Image", img)
+    cv2.imshow("GrayScale Image", imgGray)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+else:
+    print("Error: Unable to load the image from the specified path.")
