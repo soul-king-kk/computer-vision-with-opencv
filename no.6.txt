@@ -1,0 +1,15 @@
+import cv2
+import numpy as np
+cap = cv2.VideoCapture("C:/Users/kavin/Downloads/94132137-7d4fc100-fe7c-11ea-8512-69f90cb65e48.gif")
+if (cap.isOpened()== False):
+    print("Error opening video file")
+while(cap.isOpened()):
+    ret, frame = cap.read()
+    if ret == True:
+        cv2.imshow('Frame', frame)
+        if cv2.waitKey(250) & 0xFF == ord('q'):
+            break
+    else:
+        break
+cap.release()
+cv2.destroyAllWindows()
